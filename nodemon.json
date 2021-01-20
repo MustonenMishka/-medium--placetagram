@@ -1,0 +1,9 @@
+{
+  "env": {
+    "DB_USER": "mishka",
+    "DB_PASSWORD": "1994-455",
+    "DB_NAME": "PlaceTagram",
+    "GOOGLE_API_KEY": "AIzaSyBMB1xMwiFzAkdExHbOujVCLByob762xak",
+    "JWT_KEY": "placetagram_jwt_secret"
+  }
+}
