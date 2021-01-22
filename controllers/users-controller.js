@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 
 const HttpError = require('../models/http-error');
 const User = require('../models/user');
+const cloudinary = require('../config/cloudinary-config');
 
 const getUsers = async (req, res, next) => {
     const foundUsers = await User.find({}, '-password');
@@ -39,12 +40,23 @@ const createUser = async (req, res, next) => {
         return next(new HttpError('Could not create user, try again', 500))
     }
 
+    if (!req.file) {
+        return next(new HttpError('Error during uploading image', 500))
+    }
+    let imageUrl;
+    try {
+        const result = await  cloudinary.uploader.upload(req.file.path);
+        imageUrl = result.secure_url;
+    } catch (e) {
+        return next(new HttpError('Error during uploading image', 500))
+    }
+
 
     const createdUser = new User({
         name, email, about,
         password: hashedPassword,
         places: [],
-        image: req.file.path
+        image: imageUrl
     });
     try {
         await createdUser.save()

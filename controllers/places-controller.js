@@ -6,6 +6,7 @@ const HttpError = require('../models/http-error');
 const getCoordsFromAddress = require('../util/location');
 const Place = require('../models/place');
 const User = require('../models/user');
+const cloudinary = require('../config/cloudinary-config');
 
 const getPlaceById = async (req, res, next) => {
     const placeId = req.params.placeId;
@@ -53,9 +54,21 @@ const createPlace = async (req, res, next) => {
     } catch (e) {
         return next(e)
     }
+
+    if (!req.file) {
+        return next(new HttpError('Error during uploading image', 500))
+    }
+    let imageUrl;
+    try {
+        const result = await  cloudinary.uploader.upload(req.file.path);
+        imageUrl = result.secure_url;
+    } catch (e) {
+        return next(new HttpError('Error during uploading image', 500))
+    }
+
     const createdPlace = new Place({
         title, description, address,
-        image: req.file.path,
+        image: imageUrl,
         location: coordinates,
         creator: req.userData.userId
     });

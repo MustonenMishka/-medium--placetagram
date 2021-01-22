@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const fs = require('fs');
 const path = require('path');
 
 const placesRoutes = require('./routes/places-routes');
@@ -11,9 +10,6 @@ const HttpError = require('./models/http-error');
 const app = express();
 
 app.use(bodyParser.json());
-
-app.use('/uploads/images', express.static(path.join('uploads', 'images')));
-app.use(express.static(path.join('public')));
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -26,16 +22,9 @@ app.use('/api/places', placesRoutes);
 app.use('/api/users', usersRoutes);
 
 app.use((req, res, next) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+    next(new HttpError('Unknown route', 404))
 });
-
 app.use((error, req, res, next) => {
-    if (req.file) {
-        fs.unlink(req.file.path, err => {
-            console.log(err)
-        })
-    }
-
     if (res.headersSent) { //if err is already handled
         return next(error);
     }

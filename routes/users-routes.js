@@ -2,7 +2,7 @@ const express = require('express');
 const {check} = require('express-validator');
 
 const usersControllers = require('../controllers/users-controller');
-const fileUpload = require('../middleware/file-upload');
+const multerUploads = require('../middleware/multer');
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ router.get('/', usersControllers.getUsers);
 
 router.post(
     '/signup',
-    fileUpload.single('image'),
+    multerUploads.single("image"),
     [
         check('name').not().isEmpty(),
         check('email').normalizeEmail().isEmail(),

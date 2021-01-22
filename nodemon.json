@@ -4,6 +4,10 @@
     "DB_PASSWORD": "1994-455",
     "DB_NAME": "PlaceTagram",
     "GOOGLE_API_KEY": "AIzaSyBMB1xMwiFzAkdExHbOujVCLByob762xak",
-    "JWT_KEY": "placetagram_jwt_secret"
+    "JWT_KEY": "placetagram_jwt_secret",
+    "CLOUDINARY_URL": "cloudinary://852749124251514:50uOn5AiT1nnWXlalmFU8JSxK5c@mustonen",
+    "CLOUDINARY_CLOUD_NAME": "mustonen",
+    "CLOUDINARY_API_KEY": "852749124251514",
+    "CLOUDINARY_API_SECRET": "50uOn5AiT1nnWXlalmFU8JSxK5c"
   }
 }
