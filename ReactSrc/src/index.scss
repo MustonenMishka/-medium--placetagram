@@ -1,0 +1,24 @@
+@import 'shared/sass/variables';
+@import 'shared/sass/utility';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: $font-primary, sans-serif;
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  background: #c3bef0;
+  color: #2b2c48;
+}

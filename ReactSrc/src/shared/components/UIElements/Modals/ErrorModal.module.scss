@@ -1,0 +1,50 @@
+@import 'src/shared/sass/variables';
+
+.Modal {
+width: 50%;
+  max-width: 30rem;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+
+
+    .image {
+      align-self: center;
+      width: 60%;
+      margin-top: 2rem;
+      align-items: center;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  .content {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .desc {
+      line-height: 1.6;
+      color: #636b6f;
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: $font-secondary, sans-serif;
+    }
+  }
+}

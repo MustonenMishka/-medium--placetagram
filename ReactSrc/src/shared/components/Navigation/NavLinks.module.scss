@@ -1,0 +1,52 @@
+@import "src/shared/sass/variables";
+
+.NavLinks {
+  list-style: none;
+  height: 100%;
+  @include centered;
+  overflow: hidden;
+
+  .activeLink {
+    background-color: $secondary-color-dark;
+  }
+
+  svg {
+    width: 3vh;
+    height: 3vh;
+    transition: all .2s;
+  }
+
+  a {
+    height: 100%;
+    width: 100%;
+    @include centered;
+  }
+
+  li {
+    height: 100%;
+    @include centered;
+    width: 8vh;
+
+    &:hover svg {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media (max-width: 767.9px) {
+  .NavLinks {
+    flex-direction: column;
+
+    li {
+      height: 8rem;
+      @include centered;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import 'src/shared/sass/variables';
+
+.Button {
+  flex: 1 1 auto;
+  text-align: center;
+  background: 0;
+  font-size: 1.5rem;
+  border: 0;
+  padding: .5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: $font-secondary, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  color: $primary-color-light;
+  user-select: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover,
+  &:active {
+    color: $secondary-color-dark;
+    border-bottom: 3px solid $secondary-color-light;
+    background: linear-gradient(
+                    to bottom,
+                    rgba(127, 199, 231, 0) 0%,
+                    rgba(207, 204, 255, 0.2) 44%,
+                    rgba(211, 226, 255, 0.4) 100%
+    );
+  }
+
+  &:disabled,
+  &:hover:disabled,
+  &:active:disabled {
+    background: #ccc;
+    color: #979797;
+    border-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.big {
+  font-size: 2.5rem;
+}
+
+.small {
+  font-size: .8rem;
+}
+
+.inverse {
+color: white;
+  background: $primary-color-light;
+}
+
+.danger {
+  color: $danger-color-light;
+
+  &:hover,
+  &:active {
+    color: $danger-color-dark;
+    border-bottom: 3px solid $danger-color-dark;
+    background: linear-gradient(
+                    to bottom,
+                    rgba(#e6739f, 0) 0%,
+                    rgba(#cc0e74, 0.1) 44%,
+                    rgba(#790c5a, 0.2) 100%
+    );
+  }
+}
+
+.borderless {
+  background: transparent;
+  &:hover,
+  &:active {
+    border-bottom: 3px solid transparent;
+    background: transparent;
+  }
+}

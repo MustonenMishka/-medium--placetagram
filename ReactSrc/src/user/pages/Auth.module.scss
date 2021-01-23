@@ -1,0 +1,53 @@
+@import "src/shared/sass/variables";
+
+.container {
+  display: flex;
+  width: 80%;
+  max-width: 80rem;
+  margin: 0 auto;
+  font-family: $font-secondary;
+}
+
+.sticker {
+  width: 45%;
+  background: $form-color-dark;
+  color: $form-color-light;
+  margin: auto 0;
+  padding: 2rem 5rem 2rem 2rem;
+
+  .heading {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .desc {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+}
+
+.AuthForm {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  box-shadow: $box-shadow-big;
+  background: $form-color-light;
+  color: $form-color-dark;
+  width: 60%;
+
+  .SignModeSwitch {
+    margin: 1rem 2rem 0 auto;
+  }
+  .formContent {
+    margin: 0 2rem;
+  }
+  .spinner {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+  }
+}
+

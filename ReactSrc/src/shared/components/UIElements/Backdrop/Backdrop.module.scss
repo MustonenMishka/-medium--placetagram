@@ -1,0 +1,55 @@
+.Backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+  backdrop-filter: blur(.1rem);
+}
+
+// TO RIGHT ANIMATION
+.toRight-enter {
+  transform: translateX(-100%);
+}
+
+.toRight-enterActive {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.toRight-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.toRight-exitActive {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 200ms;
+}
+
+
+// SCALE ANIMATION
+.scale-enter {
+  transform: scale(0);
+}
+
+.scale-enterActive {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.scale-exit {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-exitActive {
+  transform: scale(0);
+  opacity: 0;
+  transition: all 200ms;
+}

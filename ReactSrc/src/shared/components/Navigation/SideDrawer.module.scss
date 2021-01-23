@@ -1,0 +1,86 @@
+@import "src/shared/sass/variables";
+
+.SideDrawer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 20%;
+  min-width: 8rem;
+  background-color: $primary-color-dark;
+  box-shadow: $box-shadow-small;
+
+  .burger {
+    @include centered;
+    width: 100%;
+    height: 10vh;
+    background: transparent;
+    border: none;
+    margin-right: 2rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    outline: none;
+
+    .line {
+      display: block;
+      width: 4rem;
+      height: .2rem;
+      background: white;
+      transition: all .3s;
+
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        height: .2rem;
+        background: white;
+        transition: all .3s;
+      }
+
+      &:before {
+        transform: translateY(-1.1rem);
+        width: 120%;
+      }
+
+      &:after {
+        transform: translateY(0.9rem);
+        width: 80%;
+      }
+    }
+
+    &_Opened {
+      .line {
+        transform: rotate(-45deg);
+
+        &:before {
+           width: 0;
+         }
+        &:after {
+          transform: translateY(-.2rem) rotate(90deg);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .navLinksSide {
+    height: 90vh;
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+
+    &_Closed {
+      height: 0;
+      opacity: 0;
+      transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .SideDrawer {
+    display: none;
+  }
+}

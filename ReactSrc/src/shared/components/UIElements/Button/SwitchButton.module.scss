@@ -1,0 +1,59 @@
+@import "src/shared/sass/variables";
+
+.SwitchButton {
+  cursor: pointer;
+  @include centered;
+  position: relative;
+  height: 4rem;
+  background: $valid-color;
+  border-radius: .5rem;
+  transition: all .2s;
+  border: 0;
+  text-decoration: none;
+  box-shadow: $box-shadow-small;
+  justify-content: space-between;
+
+  &:focus {
+    outline: 0;
+  }
+
+  .opt1,
+  .opt2 {
+    position: relative;
+    @include centered;
+    font-size: 1.5rem;
+    z-index: 2;
+    transition: all .2s;
+    padding: 0 1rem;
+  }
+  .opt1 {
+    color: $valid-color;
+  }
+  .opt2 {
+    color: $form-color-light;
+  }
+  .cursor {
+    position: absolute;
+    z-index: 1;
+    width: 45%;
+    height: 90%;
+    background: $form-color-light;
+    border-radius: .3rem;
+    transform: translateX(5%);
+    transition: all .2s;
+  }
+}
+
+.Checked {
+  background-color: $invalid-color;
+
+  .opt1 {
+    color: $form-color-light;
+  }
+  .opt2 {
+    color: $invalid-color;
+  }
+  .cursor {
+    transform: translateX(118%);
+  }
+}

@@ -1,0 +1,35 @@
+// FONTS
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700|Jost:400,500,600,700&display=swap");
+$font-primary: 'Jost';
+$font-secondary: 'DM Sans';
+
+// COLORS
+
+$primary-color-dark: #521262;
+$primary-color-light: #6639a6;
+
+$secondary-color-dark: #163172;
+$secondary-color-light: #1e56a0;
+
+$danger-color-light: #f56a79;
+$danger-color-dark: #ff414d;
+
+$valid-color: #16a596;
+$invalid-color: #dd5966;
+
+$form-color-dark: rgb(72, 70, 109);
+$form-color-light: #F1F1F2;
+
+//BOX-SHADOWS
+
+$box-shadow-small: 0 1rem 3rem rgba(0,0,0,0.2);
+$box-shadow-big: 0 2rem 4rem rgba(0,0,0,0.5);
+
+
+// MIXINS
+
+@mixin centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
