@@ -2,18 +2,25 @@
 
 .container {
   display: flex;
+  flex-wrap: nowrap;
   width: 80%;
   max-width: 80rem;
   margin: 0 auto;
   font-family: $font-secondary;
+  @media screen and (max-width: 700px) {
+    flex-wrap: wrap;
+  }
 }
 
 .sticker {
-  width: 45%;
+  width: 40%;
   background: $form-color-dark;
   color: $form-color-light;
   margin: auto 0;
   padding: 2rem 5rem 2rem 2rem;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
 
   .heading {
     font-family: $font-primary;
@@ -37,13 +44,21 @@
   background: $form-color-light;
   color: $form-color-dark;
   width: 60%;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
 
   .SignModeSwitch {
     margin: 1rem 2rem 0 auto;
   }
+
   .formContent {
     margin: 0 2rem;
+    @media screen and (max-width: 700px) {
+      margin: 0;
+    }
   }
+
   .spinner {
     position: absolute;
     top: 1.5rem;
