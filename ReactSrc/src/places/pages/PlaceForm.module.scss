@@ -2,10 +2,14 @@
 
 .container {
   display: flex;
+  flex-wrap: nowrap;
   width: 80%;
   max-width: 80rem;
   margin: 0 auto;
   font-family: $font-secondary;
+  @media screen and (max-width: 700px) {
+    flex-wrap: wrap;
+  }
 }
 
 .sticker {
@@ -13,6 +17,9 @@
   background: $form-color-light;
   margin: auto 0;
   padding: 2rem 5rem 2rem 2rem;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
 
   .heading {
     font-family: $font-primary;
@@ -36,6 +43,9 @@
     background: $form-color-dark;
     color: $form-color-light;
     width: 60%;
+    @media screen and (max-width: 700px) {
+      width: 100%;
+    }
 
     .spinner {
       position: absolute;
@@ -45,6 +55,8 @@
 
     .formContent {
       margin: 0 2rem;
+      @media screen and (max-width: 700px) {
+        margin: 0;
+      }
     }
   }
-
